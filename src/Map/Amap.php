@@ -8,11 +8,9 @@ class Amap extends AbstractMap
 
     public function applyScript(array $id)
     {
-        return <<<EOT        
+        return <<<EOT
 (function() {
-
-	var map
-    
+    var map;
     function init(name) {
         
         var lat = $('#{$id['lat']}');

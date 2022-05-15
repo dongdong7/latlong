@@ -8,15 +8,17 @@ class Amap extends AbstractMap
 
     public function applyScript(array $id)
     {
-        return <<<EOT
+        return <<<EOT        
 (function() {
+
+	var map
     
     function init(name) {
         
         var lat = $('#{$id['lat']}');
         var lng = $('#{$id['lng']}');
     
-        var map = new AMap.Map(name, {
+        map = new AMap.Map(name, {
             zoom: {$this->getParams('zoom')},
             center: [lng.val() || 0, lat.val() || 0],//中心点坐标
             viewMode:'3D',//使用3D视图
